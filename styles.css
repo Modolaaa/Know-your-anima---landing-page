@@ -1,0 +1,570 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #0d0d0d;
+}
+
+/* --- NAV --- */
+header {
+  background:  rgba(104,195,183);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 7px 18px; /* antes era 10px 30px, lo achicamos */
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  height: 35px; /* más chico, antes 50px */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex: 1; /* ocupa todo el espacio posible */
+  justify-content: space-evenly; /* distribuye los <li> de manera equitativa */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Efecto subrayado animado */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #88389c, #a957bc);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #88389c;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+
+/* --- Hamburger button --- */
+.nav-toggle {
+  display: none; /* solo visible en mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Nav links para mobile (oculto por defecto) */
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(104,195,183);
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 15px;
+    display: none; /* oculto por defecto */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex; /* mostrar hamburger en mobile */
+  }
+
+  nav ul li a {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+
+/* Hero Section */
+#inicio_section {
+  height: 100vh; /* ocupa toda la pantalla */
+  background: url("assets/background_magic_garden.jpg") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* Overlay oscuro para que el texto resalte */
+#inicio_section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+#container_inicio {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+/* Títulos */
+#game_title {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 3rem;
+  color: #7fffd4;
+  margin-bottom: 15px;
+}
+
+#game_subtitle {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+/* Imagen flotante */
+#container_inicio img {
+  max-width: 200px;
+  margin: 20px 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Bullets de género */
+#genre_bullets {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.game_category_bullet {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.game_category_bullet:hover {
+  background: rgba(127, 255, 212, 0.3);
+}
+
+/* Botón CTA */
+#boton_trailer {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #7fffd4;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#boton_trailer:hover {
+  background: #5fd7b2;
+  transform: scale(1.05);
+}
+
+/* Sección "Sobre el Juego" */
+#sobre_el_juego_section {
+  padding: 80px 20px;
+  background: #111; /* fondo oscuro para contraste */
+  color: #fff;
+  text-align: center;
+}
+
+.sobre-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sobre-title {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #7fffd4;
+}
+
+.sobre-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #ddd;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Video responsivo */
+.trailer-container {
+  position: relative;
+  padding-bottom: 56.25%; /* relación 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* Sección Sobre Nosotros */
+#sobre_nosotros_section {
+  padding: 80px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+.nosotros-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nosotros-title {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #7fffd4;
+}
+
+.nosotros-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  color: #ddd;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: "Uncial Antiqua", system-ui;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #7fffd4;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(127, 255, 212, 0.4);
+}
+
+/* Galería */
+/* Sección */
+#galeria_section {
+  padding: 60px 20px;
+  background: #0d0d0d;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+#galeria_section .section_title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: "Uncial Antiqua", system-ui;
+}
+
+#galeria_section .section_description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.carousel_track-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel_track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel_slide {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel_slide img {
+  width: 100%;
+  display: block;
+}
+
+/* Botones */
+.carousel_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+.carousel_btn.prev {
+  left: 15px;
+}
+
+.carousel_btn.next {
+  right: 15px;
+}
+
+.carousel_btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* FAQ SECTION */
+#faq_section {
+  padding: 80px 20px;
+  background: #1b1b1b;
+  color: #fff;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #7fffd4;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: "Uncial Antiqua", system-ui;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 15px;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  color: #ddd;
+}
+
+
+/*Section contacto*/
+#contacto_section {
+  padding: 80px 20px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-weight: bold;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos específicos */
+.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.x {
+  background: #000;
+  border: 2px solid #fff;
+}
+
+.youtube {
+  background: #ff0000;
+}
+
+
+/*FOOTER*/
+
+#main_footer {
+  background: #0d0d0d;
+  color: #aaa;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  max-width: 80px;
+  margin-bottom: 10px;
+}
+
+#main_footer p {
+  margin: 0;
+  color: #ddd;
+}
+
+#main_footer p:last-child {
+  font-style: italic;
+  color: #999;
+}

@@ -139,7 +139,7 @@ nav ul li a:hover::after {
 /* Hero Section */
 #inicio_section {
   height: 100vh; /* ocupa toda la pantalla */
-  background: url("assets/background_magic_garden.jpg") no-repeat center center/cover;
+  background: url("assets/Imagen Fondo Inicio.jpg") no-repeat center center/cover;
   position: relative;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@ nav ul li a:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -535,7 +535,17 @@ nav ul li a:hover::after {
 .youtube {
   background: #ff0000;
 }
+/* Color oficial de Discord */
+.social-btn.discord {
+    background-color: #5865F2; /* Blurple */
+    color: white;
+}
 
+/* Color de marca de Ko-fi */
+.social-btn.kofi {
+    background-color: #29abe0; /* Ko-fi Blue */
+    color: white;
+}
 
 /*FOOTER*/
 

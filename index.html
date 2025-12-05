@@ -6,60 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <title>Know your anima!</title>
 </head>
 
 <body>
 
     <header>
-    
         <nav>
-        <img src="assets/know_your_anima_logo.png" alt="know your anima logo">
+            <img src="assets/know_your_anima_logo.png" alt="know your anima logo" class="nav-logo">
 
-        <!-- Botón hamburger -->
-        <button class="nav-toggle" aria-label="Abrir menú">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </button>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
 
-        <ul class="nav-links">
-            <li><a href="#inicio_section">Inicio</a></li>
-            <li><a href="#sobre_el_juego_section">Sobre el juego</a></li>
-            <li><a href="#sobre_nosotros_section">Sobre nosotros</a></li>
-            <li><a href="#galeria_section">Galeria</a></li>
-            <li><a href="#faq_section">FAQ</a></li>
-            <li><a href="#contacto_section">Contacto</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="#inicio_section" data-translate="nav_home">Inicio</a></li>
+                <li><a href="#sobre_el_juego_section" data-translate="nav_about_game">Sobre el juego</a></li>
+                <li><a href="#sobre_nosotros_section" data-translate="nav_about_us">Sobre nosotros</a></li>
+                <li><a href="#galeria_section" data-translate="nav_gallery">Galería</a></li>
+                <li><a href="#faq_section" data-translate="nav_faq">FAQ</a></li>
+                <li><a href="#contacto_section" data-translate="nav_contact">Contacto</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN / ES</button></li>
+            </ul>
         </nav>
-
-
     </header>
     
     <section id="inicio_section">
         <div id="container_inicio">
 
-            <h1 id="game_title">¡Bienvenido a Know your Ánima!</h1>
-            <h2 id="game_subtitle">Descubre algo nuevo sobre tí mientras cuidas de tu jardín interior...</h2>
+            <h1 id="game_title" data-translate="hero_title">¡Bienvenido a Know your Ánima!</h1>
+            <h2 id="game_subtitle" data-translate="hero_subtitle">Descubre algo nuevo sobre ti mientras cuidas de tu jardín interior...</h2>
 
             <img src="assets/know_your_anima_logo.png" alt="know your anima logo">
 
             <ul id="genre_bullets">
-                <li class="game_category_bullet">Spiritual</li>
-                <li class = "game_category_bullet">Farming Sim</li>
-                <li class="game_category_bullet">Cozy</li>
+                <li class="game_category_bullet" data-translate="tag_spiritual">Spiritual</li>
+                <li class="game_category_bullet" data-translate="tag_farming">Farming Sim</li>
+                <li class="game_category_bullet" data-translate="tag_cozy">Cozy</li>
             </ul>
 
-            <a href="#sobre_el_juego_section" id="boton_trailer">¡Ver el trailer ahora!</a>
+            <a href="#sobre_el_juego_section" id="boton_trailer" data-translate="btn_trailer">¡Ver el trailer ahora!</a>
             
         </div>
 
     </section>
+
     <section id="sobre_el_juego_section">
         <div class="sobre-container">
-            <h2 class="sobre-title">Sobre el juego</h2>
-            <p class="sobre-description">
+            <h2 class="sobre-title" data-translate="section_about_game_title">Sobre el juego</h2>
+            <p class="sobre-description" data-translate="section_about_game_desc">
             <strong>Know Your Anima</strong> es una experiencia introspectiva y de simulación de granjas donde
             explorarás diferentes aspectos de tu personalidad mientras cuidas de tu propio jardín
             interior. Sumérgete en un mundo mágico lleno de maravillas, crecimiento personal y
@@ -76,47 +73,44 @@
             </div>
         </div>
     </section>
+
     <section id="sobre_nosotros_section">
         <div class="nosotros-container">
-            <h2 class="nosotros-title">Sobre Nosotros</h2>
-            <p class="nosotros-description">
+            <h2 class="nosotros-title" data-translate="section_about_us_title">Sobre Nosotros</h2>
+            <p class="nosotros-description" data-translate="section_about_us_desc">
             Somos un pequeño equipo de <strong>tres soñadores</strong> que buscan darle vida a un proyecto de
             calidad nacido del amor por el arte y los videojuegos, con los recursos que tenemos al
-            alcance.  
-            <br><br>
-            <em>Know Your Anima</em> es el fruto de nuestra pasión compartida, de largas noches 
+            alcance. <br><br>
+            Know Your Anima es el fruto de nuestra pasión compartida, de largas noches 
             de creatividad y de la convicción de que incluso los proyectos más humildes pueden 
             florecer cuando se hacen con el corazón. 🌱✨
             </p>
 
             <div class="cards-container">
-            <!-- Card Programador -->
             <div class="card">
                 <img src="assets/Foto del Programador del equipo.jpg" alt="Programador del equipo">
-                <h3>Programador</h3>
-                <p>Jim es el encargado de dar vida a las mecánicas, la lógica y el mundo interactivo de <em>Know Your Ánima</em>.</p>
+                <h3 data-translate="role_programmer">Programador</h3>
+                <p data-translate="desc_programmer">Jim es el encargado de dar vida a las mecánicas, la lógica y el mundo interactivo de Know Your Ánima.</p>
             </div>
 
-            <!-- Card Artista Digital -->
             <div class="card">
                 <img src="assets/Foto del artista del equipo.png" alt="Artista digital del equipo">
-                <h3>Artista Digital</h3>
-                <p>Layla es la diseñadora de los escenarios, personajes y atmósferas mágicas que destacan a nuestro jardín interior.</p>
+                <h3 data-translate="role_artist">Artista Digital</h3>
+                <p data-translate="desc_artist">Layla es la diseñadora de los escenarios, personajes y atmósferas mágicas que destacan a nuestro jardín interior.</p>
             </div>
 
-            <!-- Card Compositor -->
             <div class="card">
                 <img src="assets/Foto del compositor del equipo.png" alt="Compositor del OST">
-                <h3>Compositor</h3>
-                <p>Hikki es el creador de la banda sonora original, que acompaña la experiencia con melodías emotivas y mágicas.</p>
+                <h3 data-translate="role_composer">Compositor</h3>
+                <p data-translate="desc_composer">Hikki es el creador de la banda sonora original, que acompaña la experiencia con melodías emotivas y mágicas.</p>
             </div>
             </div>
         </div>
     </section>
     
     <section id="galeria_section">
-        <h2 class="section_title">Galería</h2>
-        <p class="section_description">
+        <h2 class="section_title" data-translate="section_gallery_title">Galería</h2>
+        <p class="section_description" data-translate="section_gallery_desc">
             Un vistazo a lo que estamos creando. Próximamente podrás ver imágenes del juego acabado.
         </p>
 
@@ -134,7 +128,6 @@
                 <li class="carousel_slide">
                 <img src="assets/Imagen Carrusel 03.JPG" alt="Imagen 3">
                 </li>
-
             </ul>
             </div>
 
@@ -143,34 +136,34 @@
     </section>
 
     <section id="faq_section">
-        <h2 class="section_title">Preguntas Frecuentes</h2>
+        <h2 class="section_title" data-translate="section_faq_title">Preguntas Frecuentes</h2>
         <div class="faq-container">
             
             <div class="faq-item">
-            <button class="faq-question">¿En qué plataformas estará disponible?</button>
+            <button class="faq-question" data-translate="faq_q1">¿En qué plataformas estará disponible?</button>
             <div class="faq-answer">
-                <p>El juego se lanzará inicialmente en Steam (PC) y eventualmente llegará también a la Google Play Store.</p>
+                <p data-translate="faq_a1">El juego se lanzará inicialmente en Steam (PC) y eventualmente llegará también a la Google Play Store.</p>
             </div>
             </div>
 
             <div class="faq-item">
-            <button class="faq-question">¿El juego tendrá varios idiomas?</button>
+            <button class="faq-question" data-translate="faq_q2">¿El juego tendrá varios idiomas?</button>
             <div class="faq-answer">
-                <p>Sí, tras su lanzamiento estará disponible en español e inglés. Con el tiempo existe la posibilidad de ampliar esta cantidad inicial.</p>
+                <p data-translate="faq_a2">Sí, tras su lanzamiento estará disponible en español e inglés. Con el tiempo existe la posibilidad de ampliar esta cantidad inicial.</p>
             </div>
             </div>
 
             <div class="faq-item">
-            <button class="faq-question">¿Se podrá jugar en cooperativo o multijugador?</button>
+            <button class="faq-question" data-translate="faq_q3">¿Se podrá jugar en cooperativo o multijugador?</button>
             <div class="faq-answer">
-                <p>La experiencia de Know Your Ánima es principalmente introspectiva, por lo que un modo multijugador va en contra del propósito principal del juego.</p>
+                <p data-translate="faq_a3">La experiencia de Know Your Ánima es principalmente introspectiva, por lo que un modo multijugador va en contra del propósito principal del juego.</p>
             </div>
             </div>
 
             <div class="faq-item">
-            <button class="faq-question">¿Cuándo será lanzado?</button>
+            <button class="faq-question" data-translate="faq_q4">¿Cuándo será lanzado?</button>
             <div class="faq-answer">
-                <p>Por ahora no daremos una fecha confirmada, sin embargo todas las novedades sobre el juego se publican en redes sociales y nuestro servidor de Discord.</p>
+                <p data-translate="faq_a4">Por ahora no daremos una fecha confirmada, sin embargo todas las novedades sobre el juego se publican en redes sociales y nuestro servidor de Discord.</p>
             </div>
             </div>
 
@@ -178,9 +171,9 @@
     </section>
 
     <section id="contacto_section">
-        <h2 class="section_title">Contacto</h2>
-        <p class="section_description">
-            ¡Síguenos en nuestras redes o forma parte de nuestro servidor de Discord para enterarte de las últimas novedades sobre <strong>Know Your Ánima</strong>!
+        <h2 class="section_title" data-translate="section_contact_title">Contacto</h2>
+        <p class="section_description" data-translate="section_contact_desc">
+            ¡Síguenos en nuestras redes o forma parte de nuestro servidor de Discord para enterarte de las últimas novedades sobre Know Your Ánima!
         </p>
 
         <div class="social-links">
@@ -208,11 +201,10 @@
     <div class="footer-container">
         <img src="assets/know_your_anima_logo.png" alt="Know Your Anima Logo" class="footer-logo">
         <p>Know Your Anima © 2025</p>
-        <p>Hecho con ❤️ por un pequeño equipo indie</p>
+        <p data-translate="footer_made_with">Hecho con ❤️ por un pequeño equipo indie</p>
     </div>
     </footer>
 
-
-    <script src = "main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
